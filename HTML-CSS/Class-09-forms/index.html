@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formulário de inscrição de curso" />
+    <title>Class 09 HTML forms</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form method="get">
+      <fieldset>
+        <legend>
+          Empréstimo <br />
+          do <br />
+          BRADESCO
+        </legend>
+        <img
+          src="https://www.agenciacma.com.br/wp-content/uploads/2021/03/Bradesco_V_Red_RGB.png"
+          alt=""
+        />
+
+        <section>
+          <label for="name">Nome<span>*</span></label>
+
+          <input
+            type="text"
+            id="name"
+            name="nome"
+            placeholder="Seu nome aqui"
+            autofocus
+            required
+          />
+        </section>
+
+        <section>
+          <label for="email">Email <span>*</span></label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Example@gmail.com"
+            required
+          />
+        </section>
+
+        <div class="boxBirthPhone">
+          <section>
+            <label for="birth">Data de Nascimento <span>*</span></label>
+
+            <input type="date" id="birth" name="birth" required />
+          </section>
+
+          <section>
+            <label for="phone">Whatsapp <span>*</span></label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="(99) 9999-9999"
+              required
+            />
+          </section>
+        </div>
+
+        <section>
+          <label for="loans">Empréstimos</label>
+          <select name="loans" id="loans">
+            <option value="R$100,00">R$100,00</option>
+            <option value="R$250,00">R$250,00</option>
+            <option value="R$500,00">R$500,00</option>
+            <option value="R$1.000,00">R$1.000,00</option>
+          </select>
+        </section>
+
+        <section class="boxYesOrNo">
+          <fieldset>
+            <span>
+              <legend>Quer fazer um investimento:</legend>
+            </span>
+
+            <span>
+              <label for="yes">Sim</label>
+              <input type="radio" name="shift" id="yes" value="yes" checked />
+            </span>
+
+            <span>
+              <label for="não">Não</label>
+              <input type="radio" name="shift" id="não" value="não" />
+            </span>
+          </fieldset>
+        </section>
+
+        <section>
+          <label for="obs">Observações</label>
+          <textarea
+            name="obs"
+            id="obs"
+            placeholder="Digite uma pergunta ou Observações."
+            maxlength="240"
+          ></textarea>
+        </section>
+
+        <section class="boxTerm">
+          <span>
+            <input
+              type="checkbox"
+              name="term"
+              id="term"
+              value="true"
+              required
+              oninvalid="this.setCustomValidity('POHA LEIA ESSE KRAI E MARCA')"
+              oninput="this.setCustomValidity('')"
+            />
+            <label for="term"
+              >Aceita os <a href="">termos de uso</a>?<span>*</span></label
+            >
+          </span>
+        </section>
+
+        <button type="submit">Realizar</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
