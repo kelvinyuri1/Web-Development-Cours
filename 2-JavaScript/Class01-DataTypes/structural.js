@@ -43,3 +43,4 @@ const pokemon = [
 
 console.log(pokemon);
 console.log(pokemon[2].name);
+console.log(pokemon[2].level);
