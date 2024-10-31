@@ -135,9 +135,11 @@ console.log(dateNow.getFullYear());
 console.log(birthday.getFullYear());
 console.log(dateNow.getFullYear() - birthday.getFullYear());
 
+//Desafios
+
 // Desafio 1: Uma função para verificar palíndromos e retorne true e false. A logica deve receber string com palavra ou texto
 function verificar(text) {
-  let text_miniscula = text.toLocaleLowerCase();
+  let text_miniscula = text.toLocaleLowerCase().replaceAll(" ", "");
   let inverso = text_miniscula.split("").reverse().join("");
   if (inverso == text_miniscula) {
     return true;
@@ -145,37 +147,12 @@ function verificar(text) {
     return false;
   }
 }
-console.log(verificar("KELVIN"));
+document.write(verificar(prompt("Digite um nome pra verificar se é palindromo: ")));
 
 // Desafio 2: Uma logica que verifique quantos dias faltam para o ano novo (01/01/2025)
 
-const data = new Date();
-console.log(
-  data.toLocaleString("pt-BR", {
-    weekday: "long",
-    day: "numeric",
-    month: "numeric",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  })
-);
+const newYear = new Date("2025-01-01 00:00:00")
+const today = new Date()
+const daysToNewYear = newYear - today
 
-const anoNovo = new Date("2025-01-01 00:00:00");
-console.log(anoNovo);
-7;
-
-console.log((anoNovo - data) / 1000 / 60 / 60 / 24);
-console.log(data.getFullYear());
-console.log(anoNovo.getFullYear());
-console.log(data.getFullYear() - anoNovo.getFullYear());
-
-
-
-
-
-
-
-
-
-
+console.log(Math.floor(daysToNewYear / 1000 / 60 / 60 / 24));
