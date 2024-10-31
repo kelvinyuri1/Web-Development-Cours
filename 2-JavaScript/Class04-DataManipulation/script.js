@@ -88,6 +88,87 @@ function Count() {
 console.log(Count());
 
 
+const tvPrograms = ["Domingo Legal", "Fantástico", "Domingão com Hulk"];
+
+// LIFO
+// tvPrograms.pop();
+// tvPrograms.pop();
+tvPrograms.push("Bom dia e Cia");
+tvPrograms.push("TV Globinho");
+tvPrograms.pop();
+
+// FIFO
+tvPrograms.unshift("TV Cruj");
+tvPrograms.unshift("Castelo Ratimbum");
+// tvPrograms.shift()
+
+tvPrograms.splice(3, 2);
+tvPrograms.splice(1, 4, "aaaa");
+
+console.log(tvPrograms);
+
+// Date
+
+const dateNow = new Date();
+console.log(dateNow);
+console.log(dateNow.toLocaleString("pt-BR"));
+console.log(dateNow.toLocaleDateString("pt-BR"));
+console.log(dateNow.toLocaleTimeString("pt-BR"));
+
+console.log(
+  dateNow.toLocaleString("pt-BR", {
+    weekday: "long",
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  })
+);
+
+const birthday = new Date("2006-10-30 00:00:00");
+
+console.log(birthday);
+console.log((dateNow - birthday) / 1000 / 60 / 60 / 24 / 365.25);
+
+console.log(dateNow.getFullYear());
+console.log(birthday.getFullYear());
+console.log(dateNow.getFullYear() - birthday.getFullYear());
+
+// Desafio 1: Uma função para verificar palíndromos e retorne true e false. A logica deve receber string com palavra ou texto
+function verificar(text) {
+  let text_miniscula = text.toLocaleLowerCase();
+  let inverso = text_miniscula.split("").reverse().join("");
+  if (inverso == text_miniscula) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(verificar("KELVIN"));
+
+// Desafio 2: Uma logica que verifique quantos dias faltam para o ano novo (01/01/2025)
+
+const data = new Date();
+console.log(
+  data.toLocaleString("pt-BR", {
+    weekday: "long",
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  })
+);
+
+const anoNovo = new Date("2025-01-01 00:00:00");
+console.log(anoNovo);
+7;
+
+console.log((anoNovo - data) / 1000 / 60 / 60 / 24);
+console.log(data.getFullYear());
+console.log(anoNovo.getFullYear());
+console.log(data.getFullYear() - anoNovo.getFullYear());
 
 
 
