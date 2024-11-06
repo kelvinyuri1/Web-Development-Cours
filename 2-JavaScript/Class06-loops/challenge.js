@@ -7,18 +7,16 @@ for (let megaSena = 0; megaSena < 6; megaSena++) {
   numerosM.push(aleatorio);
 }
 
-if (new Set(numerosM).size !== numerosM.length) {
-  console.log("Número repetido encontrado");
+while (new Set(numerosM).size !== numerosM.length) {
   numerosM = [];
+
   for (let megaSena = 0; megaSena < 6; megaSena++) {
     let aleatorio = Math.ceil(Math.random() * 60);
     numerosM.push(aleatorio);
   }
-  console.log(numerosM.join().replaceAll(",", "-"));
-} else {
-  console.log(numerosM.join().replaceAll(",", "-"));
-  console.log("Todos os números são únicos");
 }
+console.log(numerosM.join().replaceAll(",", "-"));
+console.log("Todos os números são únicos");
 
 // Emanuel fazendo
 
@@ -26,7 +24,7 @@ if (new Set(numerosM).size !== numerosM.length) {
 
 // while (numbers.length < 6) {
 //   const draw = Math.ceil(Math.random() * 60);
-//   const formatted = String(draw).padStart(2, 0)
+//   const formatted = String(draw).padStart(2, 0);
 
 //   if (numbers.includes(formatted)) {
 //     continue;
